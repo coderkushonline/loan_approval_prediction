@@ -14,6 +14,16 @@ The dataset aims to model credit risk and loan approval prediction, providing an
 
 Build a machine learning model that predicts whether a loan application will be approved or rejected based on applicant attributes.
 
+✅**Result**
+Achieved a model with following metrics:
+```
+    Train accuracy:  0.94375
+    Test accuracy:  0.92
+    ROC AUC: 0.9236987232756666
+    Precision: 0.8719211822660099
+    Recall: 0.9672131147540983
+    F1-score: 0.917098445595855
+```
 🖥️**Applications:**
 
 * Credit risk modeling
