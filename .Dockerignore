@@ -1,0 +1,7 @@
+.qodo
+__pycache__
+.git
+venv
+loan_approval_classification.ipynb
+README.md
+.gitignore

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Approval Prediction</title>
+
+    <style>
+        :root {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background-color: rgba(223, 223, 223, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        h1{
+            color: rgb(168, 148, 148);
+        }
+        main {
+            border: 1px solid black;
+            width: fit-content;
+            height: fit-content;
+            padding: 25px 25px;
+            border-radius: 30px;
+            background-color:  rgba(223, 223, 223, 0.4);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.3rem;
+        }
+        input, button {
+            width: 80%;
+            border: 1px solid black;
+            border-radius: 20px;
+            padding: 10px 15px;
+            background-color: rgb(164, 164, 149);
+            color: white;
+            
+        }
+        input::placeholder{
+            color: white;
+        }
+        input::-webkit-inner-spin-button{
+            display: none;
+        }
+
+        button {
+            background-color: rgba(195, 187, 177, 0.7);
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: rgba(195, 187, 177, 1);
+        }
+        span{
+            color: rgb(70, 68, 68)
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>
+                Loan Approval Prediction
+            </h1>
+        </section>
+        <section>
+            <form action="/predict" method="post">
+                <input type="number" name="income" placeholder="Annual Income($)" required>
+                <input type="number" name="c_score" placeholder="Credit Score" min="300" max="850" required>
+                <input type="number" name="loan_amt" placeholder="Loan Amount" required>
+                <input type="number" name="emp_yrs" placeholder="Employed Years" min='0' max="100" required>   
+                <button>Submit</button>
+            </form>
+        </section>
+        <section>
+            <span>
+                {{ "Loan Approved" if prediction==1 else "Loan NOT Approved" if prediction==0 else "" }}
+            </span>
+        </section>
+    </main>
+</body>
+</html>
